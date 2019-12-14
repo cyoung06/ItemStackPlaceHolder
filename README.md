@@ -9,5 +9,6 @@ meta.setDisplayName("§eSpecial Item for {player}");
 meta.setLore(Arrays.asList("§fWoah! This Item is given to §e{player}§f!", "", "{multirow}"));
 meta.setPlaceHolder("player", cs.getName());
 meta.setPlaceHolder("multirow", Arrays.asList("§a(Clap)1", "§b(Clap)2", "§c(Clap)3"));
+item.setItemMeta(meta)
 {Player}.getInventory().addItem(item);
 ```
