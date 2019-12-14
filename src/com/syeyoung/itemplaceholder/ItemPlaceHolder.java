@@ -33,12 +33,12 @@ public class ItemPlaceHolder extends JavaPlugin {
 		
 		String version = getVersion(getServer());
 		switch(getVersion(getServer())) {
-//		case "v1_12_R1": »óÀ§¿¡¼­´Â nms ItemStack ¿¡¼­ PHMetaItem º¸Á¸ ºÒ°¡ 
+//		case "v1_12_R1": ìƒìœ„ì—ì„œëŠ” nms ItemStack ì—ì„œ PHMetaItem ë³´ì¡´ ë¶ˆê°€ 
 		case "v1_5_R3":
 			break;
 		default:
 			getPluginLoader().disablePlugin(this);
-			getLogger().log(Level.SEVERE, "Áö¿øÇÏÁö ¾Ê´Â ¹öÀüÀÔ´Ï´Ù : "+version+" [v1_5_R3¸¸ »ç¿ë°¡´É]");
+			getLogger().log(Level.SEVERE, "ì§€ì›í•˜ì§€ ì•ŠëŠ” ë²„ì „ì…ë‹ˆë‹¤ : "+version+" [v1_5_R3ë§Œ ì‚¬ìš©ê°€ëŠ¥]");
 			return;
 		}
 		
@@ -87,20 +87,5 @@ public class ItemPlaceHolder extends JavaPlugin {
 	    final String packageName = server.getClass().getPackage().getName();
 
 	    return packageName.substring(packageName.lastIndexOf('.') + 1);
-	}
-
-	@Override
-	public boolean onCommand(CommandSender cs, Command c, String label,
-			String[] args) {
-		PHItemStack item = new PHItemStack(Material.STONE);
-		PlaceHolderableItemMeta meta = PHItemMetaFactory.getPHItemMeta(item.getItemMeta());
-		meta.setDisplayName("¡×eÆ¯º°ÇÑ ¾ÆÀÌÅÛ for {player}");
-		meta.setLore(Arrays.asList("¡×f¿Í! ¡×e{player}¡×f¿¡°Ô Áö±ŞµÈ ¾ÆÀÌÅÛÀÌ´Ù!", "", "{multirow}"));
-		meta.setPlaceHolder("player", cs.getName());
-		meta.setPlaceHolder("multirow", Arrays.asList("¡×aÂ¦Â¦Â¦1", "¡×bÂ¦Â¦Â¦2", "¡×cÂ¦Â¦Â¦3"));
-		System.out.println(item.setItemMeta(meta));
-		System.out.println(item.getItemMeta().getClass().getName());
-		((Player) cs).getInventory().addItem(item);
-		return true;
 	}
 }
