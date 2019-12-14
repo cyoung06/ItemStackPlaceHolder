@@ -2,5 +2,3 @@ name: ItemPlaceholder
 version: 1.0.0
 main: com.syeyoung.itemplaceholder.ItemPlaceHolder
 author: cyoung06@naver.com
-commands:
-  test:
